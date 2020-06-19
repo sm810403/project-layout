@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+    width: 100%;
+    height: 100vh;
+}
+.main {
+    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(images/macbook-pro-129208.jpg) center/cover no-repeat;
+    color: white;
+    width: 100%;
+    height: 100%;
+    
+}
+nav {
+    /* display: flex; */
+    justify-content: space-between;
+    /* border-bottom: 1px solid white; */
+    align-items: center;
+    height: 60px;
+    background-color: white;
+    color: black;
+}
+.logo {
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 10%;
+}
+.nav-box {
+    /* display: flex; */
+    margin-right: 10%;
+    justify-content: space-around;
+}
+.nav-box li {
+    margin: 5px 20px;
+}
+.nav-box li a {
+    color: black;
+}
+header {
+    margin: 100px auto;
+    width: 400px;
+}
+header h1 {
+    font-weight: 800;
+}
+header p {
+    padding: 10px;
+    
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 346px) {
+    nav {
+        /* display: flex; */
+        flex-wrap: wrap;
+        height: 180px;
+        line-height: 1.5;
+    }
+    header {
+        text-align: center;
+    }
+   
+}
+@media (min-width: 769px){
+    nav {
+        display: flex;
+        height: 60px;
+    }
+    .nav-box {
+        display: flex;
+    }
+    header {
+        margin: 220px auto;
+        float: right;
+        text-align: left;
+    }
+}
