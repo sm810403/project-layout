@@ -10,13 +10,26 @@ body {
     width: 100%;
     height: 100vh;
 }
-.main {
+#main {
     background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(images/macbook-pro-129208.jpg) center/cover no-repeat;
+    clip-path: polygon(0 0, 100% 0,100% 80%, 0 100%);
     color: white;
     width: 100%;
     height: 100%;
     
 }
+#about-me {
+    width: 90%;
+    margin: auto;
+}
+#projects {
+    clear:both;
+    width: 90%;
+    margin: auto;
+}
+
+
+
 nav {
     /* display: flex; */
     justify-content: space-between;
@@ -39,6 +52,9 @@ nav {
 .nav-box li {
     margin: 5px 20px;
 }
+.nav-box  li:hover {
+    text-shadow: 0 5px 10px black;
+}
 .nav-box li a {
     color: black;
 }
@@ -51,7 +67,11 @@ header h1 {
 }
 header p {
     padding: 10px;
-    
+    text-align: center;   
+}
+
+.side-pic {
+    display: block;
 }
 
 
@@ -62,17 +82,44 @@ header p {
 
 
 
+
+
+
+
+/*       media query     */
+
 @media (min-width: 346px) {
     nav {
         /* display: flex; */
         flex-wrap: wrap;
         height: 180px;
         line-height: 1.5;
+        
+    }
+    .nav-box li {
+        text-align: center;
+        line-height: 1.5;
     }
     header {
         text-align: center;
     }
-   
+    .side-pic {
+        width: 300px;
+        float: right;
+    }
+    .text {
+        margin: 20px auto; 
+    }
+    .text h1 {
+        padding: 10px;
+    }
+    .text p {
+        padding: 10px;
+        line-height: 1.6;
+    }
+    #project {
+        padding: 20px
+    }  
 }
 @media (min-width: 769px){
     nav {
@@ -83,8 +130,25 @@ header p {
         display: flex;
     }
     header {
-        margin: 220px auto;
+        margin: 220px 40px;
         float: right;
         text-align: left;
     }
+    #about-me {
+       padding: 20px;
+    }
+
+    .text {
+        float: left;
+        width: 50%;
+        margin: 30px auto;
+    }
+    .text  P {
+        line-height: 2.2;
+    }
+    .side-pic {
+        margin-top: 30px;
+        float: right;
+    }
+   
 }
