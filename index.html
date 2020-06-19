@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="all">
     <div id="main">
         <nav>
         <div class="logo">Jk</div>
         <ul class="nav-box">
-            <li class="nav-lists"><a class="firstA" href="#">Home</a></li>
+            <li class="nav-lists"><a class="firstA" href="#main">Home</a></li>
             <li class="nav-lists"><a href="#about-me">About me</a></li>
             <li class="nav-lists"><a href="#projects">Projects</a></li>
-            <li class="nav-lists"><a href="#">Contact me</a></li>
+            <li class="nav-lists"><a href="#login-form">Contact me</a></li>
         </ul>  
         </nav>
         <header>
@@ -24,6 +24,7 @@
         </header>
     </div>
     <section id="about-me">
+        <a href="#main"><img class="toTop" src="images/BACK_TO_TOP_FINAL.png"></a>
         <div class="btn">
             <div class="btn-ball"></div>
         </div>
@@ -80,9 +81,34 @@
                 </div>
             </div>
         </div>
-
-
     </section>
 
+    <section class="slider">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </section>
+
+    <div id="login-form">
+        <form class="form" action="#" method="post">
+            <h1>Contact me</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="mail" placeholder="Your Email" requried>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" placeholder="Leave Comment.."></textarea>
+        </form>
+    </div>
+
+    <footer>
+        <h4></h4>
+        <div class="links"></div>
+        <div class="links"></div>
+        <div class="links"></div>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>

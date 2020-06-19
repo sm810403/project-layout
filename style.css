@@ -14,7 +14,8 @@ body {
     height: 100vh;
 }
 #main {
-    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(images/macbook-pro-129208.jpg) center/cover no-repeat;
+    background: radial-gradient(rgba(255, 255, 255, 0.05),rgba(0, 0, 0, 0.6)), url(images/macbook-pro-129208.jpg) center/cover no-repeat;
+    background-attachment: fixed;
     clip-path: polygon(0 0, 100% 0,100% 80%, 0 100%);
     color: white;
     width: 100%;
@@ -22,6 +23,7 @@ body {
     
 }
 #about-me {
+    position: relative;
     width: 90%;
     margin: auto;
 }
@@ -60,6 +62,7 @@ nav {
 }
 .nav-box li a {
     color: black;
+    padding: 5px 10px;
 }
 .nav-box li {  
     transition: transform .5s ease-in-out;
@@ -88,11 +91,13 @@ header h1 {
 header p {
     padding: 10px;
     text-align: left; 
-    line-height: 1.6;  
+    line-height: 1.6; 
 }
 header {
-    animation: moveIn 2s;
+    animation-fill-mode: backwards;
+    animation: moveIn 2.2s ease-out;
 }
+
 @keyframes moveIn {
     0% {
         transform: translateX(100%);
@@ -107,6 +112,20 @@ header {
         opacity: 1;
     }
 }
+
+.toTop {
+    position: fixed;
+    bottom: 10px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    cursor: pointer;
+
+}
+
+
+
 
 /* sections */
 .side-pic {
@@ -130,7 +149,65 @@ header {
     height: 100%;
     background-size: cover;
     background-position: center;
+}
+#login-form {
+    height: 100vh;
+    background: radial-gradient(rgba(255, 255, 255, 0.2) , rgba(0, 0, 0, 0.5) 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    color:black;
+}
+.form label {
+    padding: 5px;
+}
+.form h1 {
+    padding: 10px;
+}
+.form input {
+    padding: 5px;
+    outline: none;
+}
+.form textarea {
+    height: 100px;
+    font-size: 20px;
+    outline: none;
+    padding: 5px;
 
+}
+.btn {
+    width: 40px;
+    height: 70px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 22px;
+    position: fixed;
+    bottom: 10px;
+    left:10px;
+}
+.btn .btn-ball {
+    width:30px;
+    height: 30px;
+    background-color: black;
+    margin: 5px auto;
+    border-radius: 50%;
+}
+.btn .ball {
+    transform: translateY(30px)
+}
+.all {
+    background-color: black;
+    color: white;
 }
 
 
@@ -206,7 +283,7 @@ header {
         margin-right: 10%;
     }
     header {
-        margin: 220px 40px;
+        margin: 220px 60px;
         float: right;
         text-align: left;
     }
