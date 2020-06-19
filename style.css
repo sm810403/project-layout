@@ -6,6 +6,9 @@
     list-style: none;
     text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     width: 100%;
     height: 100vh;
@@ -26,16 +29,15 @@ body {
     clear:both;
     width: 90%;
     margin: auto;
+
 }
 
 
 
+/* nav */
 nav {
-    /* display: flex; */
     justify-content: space-between;
-    /* border-bottom: 1px solid white; */
     align-items: center;
-    height: 60px;
     background-color: white;
     color: black;
 }
@@ -44,34 +46,91 @@ nav {
     font-size: 30px;
     margin-left: 10%;
 }
-.nav-box {
-    /* display: flex; */
-    margin-right: 10%;
-    justify-content: space-around;
-}
+
 .nav-box li {
     margin: 5px 20px;
+    padding: 5px 10px;
 }
 .nav-box  li:hover {
     text-shadow: 0 5px 10px black;
 }
+.nav-box li:first-child {
+    border: 1px solid black;
+    border-radius: 20px;
+}
 .nav-box li a {
     color: black;
 }
+.nav-box li {  
+    transition: transform .5s ease-in-out;
+}
+.nav-box li:hover {
+    transform: translateY(-3px)
+}
+.nav-box li:first-child:hover {
+box-shadow: 0 4px 10px black;
+}
+.nav-box li:first-child:active {
+    transform: translateY(-1px);
+    background-color: grey;
+}
+
+
+/* header */
 header {
     margin: 100px auto;
     width: 400px;
 }
 header h1 {
     font-weight: 800;
+    padding: 10px;
 }
 header p {
     padding: 10px;
-    text-align: center;   
+    text-align: left; 
+    line-height: 1.6;  
+}
+header {
+    animation: moveIn 2s;
+}
+@keyframes moveIn {
+    0% {
+        transform: translateX(100%);
+        opacity:0;
+    }
+    80% {
+        opacity: .4;
+        transform: translateX(-3%);
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 
+/* sections */
 .side-pic {
     display: block;
+    margin-bottom: 60px;
+}
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+#projects h1 {
+    padding: 30px 20px 30px;
+}
+.box {
+    width: 100%;
+}
+.box img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
 }
 
 
@@ -90,17 +149,28 @@ header p {
 
 @media (min-width: 346px) {
     nav {
-        /* display: flex; */
         flex-wrap: wrap;
-        height: 180px;
+        height: 220px;
         line-height: 1.5;
-        
+    }
+    .nav-box {
+        margin: auto;
     }
     .nav-box li {
         text-align: center;
         line-height: 1.5;
     }
+    .nav-box li:first-child {
+        background-color: black;
+    }
+    
+    .firstA:first-child {
+        color: white;    
+    }
     header {
+        text-align: center;
+    }
+    header p {
         text-align: center;
     }
     .side-pic {
@@ -120,6 +190,11 @@ header p {
     #project {
         padding: 20px
     }  
+    .box {
+        width: 100%;
+        margin: auto;
+    }
+    
 }
 @media (min-width: 769px){
     nav {
@@ -128,6 +203,7 @@ header p {
     }
     .nav-box {
         display: flex;
+        margin-right: 10%;
     }
     header {
         margin: 220px 40px;
@@ -141,7 +217,7 @@ header p {
     .text {
         float: left;
         width: 50%;
-        margin: 30px auto;
+        margin: 60px auto;
     }
     .text  P {
         line-height: 2.2;
@@ -149,6 +225,14 @@ header p {
     .side-pic {
         margin-top: 30px;
         float: right;
+    }  
+    .box {
+        width: 49.5%;
     }
-   
+}
+@media (min-width: 1024px) {
+    .box {
+        width: 33%;
+        margin: auto;
+    }
 }
