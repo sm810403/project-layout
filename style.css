@@ -42,15 +42,41 @@ nav {
     align-items: center;
     background-color: white;
     color: black;
+    align-items: center;
+    position: relative;
+
 }
+.toggle {
+    background: black;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    border-radius: 8px;
+    cursor: pointer;   
+}
+.toggle:hover {
+    box-shadow: 0 4px 10px black;
+}
+.lines {
+    width: 25px;
+    height: 5px;
+    margin: 5px auto;
+    background: white;
+    border-radius: 5px;
+}
+
 .logo {
+    display: inline-block;
     font-weight: 700;
     font-size: 30px;
     margin-left: 10%;
+    padding: 5px;
 }
 
 .nav-box li {
-    margin: 5px 20px;
+    margin: 5px 12px;
     padding: 5px 10px;
 }
 .nav-box  li:hover {
@@ -152,7 +178,7 @@ header {
 }
 #login-form {
     height: 100vh;
-    background: radial-gradient(rgba(255, 255, 255, 0.2) , rgba(0, 0, 0, 0.5) 90%);
+    background: radial-gradient(rgba(0, 0, 0, 0.2) , rgba(0, 0, 0, 0.8) 90%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,6 +220,10 @@ header {
     position: fixed;
     bottom: 10px;
     left:10px;
+    cursor: pointer;
+}
+.btn:hover {
+    box-shadow: 1px 1px 10px lightcoral;
 }
 .btn .btn-ball {
     width:30px;
@@ -201,6 +231,7 @@ header {
     background-color: black;
     margin: 5px auto;
     border-radius: 50%;
+    transition: transform .3s ease-out;
 }
 .btn .ball {
     transform: translateY(30px)
@@ -213,25 +244,25 @@ header {
 
 
 
-
-
-
-
-
-
-
-
-
 /*       media query     */
 
 @media (min-width: 346px) {
     nav {
         flex-wrap: wrap;
-        height: 220px;
-        line-height: 1.5;
+        padding: 7px;
+    }
+    .logo {
+        display: inline-block;
     }
     .nav-box {
         margin: auto;
+        visibility: hidden;
+        height: 0;
+        transition: all .4s ease-out;
+    }
+    nav .nav-box2 {
+        visibility: visible;
+        height: 160px;
     }
     .nav-box li {
         text-align: center;
@@ -276,11 +307,14 @@ header {
 @media (min-width: 769px){
     nav {
         display: flex;
-        height: 60px;
+        height: 65px;
+        align-items: center;
     }
     .nav-box {
         display: flex;
         margin-right: 10%;
+        visibility: visible;
+        height: 45px;
     }
     header {
         margin: 220px 60px;
@@ -289,6 +323,9 @@ header {
     }
     #about-me {
        padding: 20px;
+    }
+    .toggle {
+        display: none;
     }
 
     .text {
@@ -305,6 +342,9 @@ header {
     }  
     .box {
         width: 49.5%;
+    }
+    .toggle {
+        display: hidden;
     }
 }
 @media (min-width: 1024px) {
