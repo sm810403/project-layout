@@ -107,6 +107,7 @@ box-shadow: 0 4px 10px black;
 
 /* header */
 header {
+    position: relative;
     margin: 100px auto;
     width: 400px;
 }
@@ -136,8 +137,11 @@ header {
     100% {
         transform: translateX(0%);
         opacity: 1;
-    }
-}
+    } 
+} 
+
+
+
 
 .toTop {
     position: fixed;
@@ -147,8 +151,8 @@ header {
     height: 40px;
     border-radius:50%;
     cursor: pointer;
-
 }
+
 
 
 
@@ -241,7 +245,30 @@ header {
     color: white;
 }
 
-
+.type::after {
+    content:'';
+    position: absolute;
+    width: 2px;
+    height: 34px;
+    background: white;
+    margin-left: 2px;
+    animation: typing .8s linear infinite;
+}
+@keyframes typing {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* span {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+span.fade {
+    opacity: 1;
+} */
 
 
 /*       media query     */
@@ -259,6 +286,7 @@ header {
         visibility: hidden;
         height: 0;
         transition: all .4s ease-out;
+        overflow:hidden;
     }
     nav .nav-box2 {
         visibility: visible;
@@ -268,15 +296,16 @@ header {
         text-align: center;
         line-height: 1.5;
     }
-    .nav-box li:first-child {
+    /* .nav-box li:first-child {
         background-color: black;
     }
     
     .firstA:first-child {
         color: white;    
-    }
+    } */
     header {
         text-align: center;
+        margin: 220px auto;
     }
     header p {
         text-align: center;
@@ -317,6 +346,7 @@ header {
         height: 45px;
     }
     header {
+        position: relative;
         margin: 220px 60px;
         float: right;
         text-align: left;
