@@ -34,9 +34,7 @@ toggle.addEventListener('click', ()=>{
     }
 })
 window.addEventListener('resize', ()=>{
-        var size = 0;
         if (navBox.classList.contains('nav-box2')) {
-            size++;
             navBox.classList.remove('nav-box2');
         }
 })
