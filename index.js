@@ -1,9 +1,10 @@
 // dark mode button
 let button = document.querySelector('.btn');
 let balls = document.querySelector('.btn-ball');
+let defaultMode;
 
 window.addEventListener('load',function(){
-    let defaultMode = document.body;
+    defaultMode = document.body;
     defaultMode.classList.remove('all');
 });
 
@@ -31,6 +32,13 @@ toggle.addEventListener('click', ()=>{
     } else {
         navBox.classList.remove('nav-box2');
     }
+})
+window.addEventListener('resize', ()=>{
+        var size = 0;
+        if (navBox.classList.contains('nav-box2')) {
+            size++;
+            navBox.classList.remove('nav-box2');
+        }
 })
 
 
