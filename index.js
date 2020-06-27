@@ -40,49 +40,20 @@ window.addEventListener('resize', ()=>{
 })
 
 
-    // const types = ['Journey','of','Self Taught Web Developer'];
-    // let count = 0;
-    // let index = 0;
-    // let words = '';
-    // let letters = '';
+const boxs = document.querySelectorAll('.box img');
+const overlay = document.querySelector('.overlay');
+const overImg = document.querySelector('.overImg');
 
-    // (function typing() {
-    //     if (count === types.length) {
-    //         count = 0;
-    //     }
-    //     words = types[count];
-    //     letters = words.slice(0, ++index);
-    //     document.querySelector('.type').textContent = letters;
-    //     if (letters.length === words.length) {
-    //         count++;
-    //         index = 0; 
-              
-    //     }
-    //     setTimeout(typing,400);
-    // })();
-   
-// let textMe = document.querySelector('.textMe');
-// let aboutText = textMe.textContent;
-// let splitText = aboutText.split("");
-// textMe.textContent = "";
-// for (let i = 0; i < splitText.length; i++){
-//     textMe.innerHTML += "<span>" + splitText[i] +"</span>";
-// }
+boxs.forEach(box =>{
+    box.addEventListener('click', ()=>{
+        overlay.classList.add('open');
+        const imgSrc = box.getAttribute('data-original');
+        overImg.src = `./fullpics/${imgSrc}`
+    })
+})
 
-// let char =0
-// let timer = setInterval(setEffect, 70);
-
-// function setEffect() {
-//     let spans = textMe.querySelectorAll("span")[char];
-//     spans.classList.add("fade");
-//     char++;
-//      if (char === splitText.length) {
-        
-//         complete()
-//         return;
-//      }
-// };
-// function complete(){
-//     clearInterval(timer);
-//     timer = null;
-// };
+overlay.addEventListener('click',(e)=>{
+    if (e.target.classList.contains('open')) {
+        overlay.classList.remove('open');
+    }
+})
