@@ -39,21 +39,25 @@ window.addEventListener('resize', ()=>{
         }
 })
 
-
+//gallery
 const boxs = document.querySelectorAll('.box img');
 const overlay = document.querySelector('.overlay');
 const overImg = document.querySelector('.overImg');
+const text = document.querySelector('.overlay h1');
 
 boxs.forEach(box =>{
     box.addEventListener('click', ()=>{
         overlay.classList.add('open');
+        overImg.classList.add('open');
         const imgSrc = box.getAttribute('data-original');
-        overImg.src = `./fullpics/${imgSrc}`
+        overImg.src = imgSrc;
+        text.textContent = imgSrc;
     })
 })
 
 overlay.addEventListener('click',(e)=>{
     if (e.target.classList.contains('open')) {
         overlay.classList.remove('open');
+        overImg.classList.remove('open');
     }
 })
