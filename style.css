@@ -151,6 +151,7 @@ header {
     height: 40px;
     border-radius:50%;
     cursor: pointer;
+    z-index:10;
 }
 
 
@@ -279,6 +280,7 @@ header {
     bottom: 10px;
     left:10px;
     cursor: pointer;
+    z-index:10;
 }
 .btn:hover {
     box-shadow: 1px 1px 10px lightcoral;
@@ -350,13 +352,9 @@ span.fade {
         text-align: center;
         line-height: 1.5;
     }
-    /* .nav-box li:first-child {
-        background-color: black;
+    .box {
+        overflow: hidden;
     }
-    
-    .firstA:first-child {
-        color: white;    
-    } */
     header {
         text-align: center;
         margin: 220px auto;
