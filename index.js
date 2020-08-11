@@ -9,6 +9,7 @@ window.addEventListener('load', ()=>{
 // dark mode button
 let button = document.querySelector('.btn');
 let balls = document.querySelector('.btn-ball');
+// let mainBefore = document.querySelector('#main:before')
 let defaultMode;
 
 window.addEventListener('load',function(){
@@ -18,7 +19,7 @@ window.addEventListener('load',function(){
 
 button.addEventListener('click', ()=> {  
         balls.classList.toggle('ball');
-        document.body.classList.toggle('all');   
+        document.body.classList.toggle('all');  
 })
 
 //nav dropdown

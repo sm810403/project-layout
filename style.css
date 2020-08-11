@@ -17,16 +17,28 @@ body {
 #main {
     background: radial-gradient(rgba(255, 255, 255, 0.05),rgba(0, 0, 0, 0.6)), url(images/seoul.jpg) center/cover no-repeat;
     background-attachment: fixed;
-    clip-path: polygon(0 0, 100% 0,100% 80%, 0 100%);
+    /* clip-path: polygon(0 0, 100% 0,100% 80%, 0 100%); */
     color: white;
     width: 100%;
-    height: 100%;
-    
+    height: 100%;  
+}
+#main:before {
+    content:'';
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(images/splash.jpg) center no-repeat;
+    background-size: 1700px;
+    mix-blend-mode: screen;
 }
 #about-me {
     position: relative;
     width: 90%;
+    height: 90%;
     margin: auto;
+    /* background-color: black; */
 }
 #projects {
     clear:both;
@@ -181,7 +193,7 @@ nav {
     color: black;
     align-items: center;
     position: relative;
-
+    z-index:1;
 }
 .toggle {
     background: black;
@@ -244,21 +256,9 @@ header {
     position: relative;
     margin: 100px auto;
     width: 400px;
-}
-header h1 {
-    font-weight: 800;
-    padding: 10px;
-}
-header p {
-    padding: 10px;
-    text-align: left; 
-    line-height: 1.6; 
-}
-header {
     animation-fill-mode: backwards;
     animation: moveIn 2.2s ease-out;
 }
-
 @keyframes moveIn {
     0% {
         transform: translateX(100%);
@@ -273,6 +273,15 @@ header {
         opacity: 1;
     } 
 } 
+header h1 {
+    font-weight: 800;
+    padding: 10px;
+}
+header p {
+    padding: 10px;
+    text-align: left; 
+    line-height: 1.6; 
+}
 .type::after {
     content:'';
     position: absolute;
