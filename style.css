@@ -15,7 +15,7 @@ body {
     height: 100vh;
 }
 #main {
-    background: radial-gradient(rgba(255, 255, 255, 0.05),rgba(0, 0, 0, 0.6)), url(images/macbook-pro-129208.jpg) center/cover no-repeat;
+    background: radial-gradient(rgba(255, 255, 255, 0.05),rgba(0, 0, 0, 0.6)), url(images/seoul.jpg) center/cover no-repeat;
     background-attachment: fixed;
     clip-path: polygon(0 0, 100% 0,100% 80%, 0 100%);
     color: white;
@@ -292,14 +292,48 @@ header {
 }
 
 
-/********* sections ********/
+/********* about me sections ********/
 #projects h1 {
     padding: 30px 20px 30px;
 }
-.side-pic {
+/* .side-pic {
     display: block;
     margin-bottom: 60px;
+} */
+.moonEffect{
+    overflow:hidden;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 60px 0;
 }
+.moonEffect h2{
+    z-index: 1;
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-size: 36px;
+}
+.moon{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    /* bottom: 30px; */
+    top:50px;
+    left: -90px;
+}
+.bg, .ground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.ground{
+    z-index:2;
+    /* bottom:110px; */
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -593,7 +627,11 @@ header {
     header p {
         text-align: center;
     }
-    .side-pic {
+    /* .side-pic {
+        width: 300px;
+        float: right;
+    } */
+    .moonEffect{
         width: 300px;
         float: right;
     }

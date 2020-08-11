@@ -55,3 +55,12 @@ overlay.addEventListener('click',(e)=>{
     }
 })
 
+//moon effect
+const moon = document.querySelector('.moon');
+const ground = document.querySelector('.ground');
+const text2 = document.querySelector('.moonEffect h2');
+window.addEventListener('scroll',()=>{
+    let distance = window.scrollY;
+    moon.style.left = distance*0.3-90 + 'px';
+    text2.style.bottom = distance*0.3+'px';
+})
