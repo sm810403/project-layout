@@ -45,6 +45,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    pointer-events: none;
 }
 .loader-box {
     position: fixed;
@@ -210,17 +211,9 @@ nav {
     margin-left: 10%;
     padding: 5px;
 }
-
 .nav-box li {
     margin: 5px 12px;
     padding: 5px 10px;
-}
-.nav-box  li:hover {
-    text-shadow: 0 5px 10px black;
-}
-.nav-box li:first-child {
-    border: 1px solid black;
-    border-radius: 20px;
 }
 .nav-box li a {
     color: black;
@@ -230,7 +223,12 @@ nav {
     transition: transform .5s ease-in-out;
 }
 .nav-box li:hover {
-    transform: translateY(-3px)
+    transform: translateY(-3px);
+    text-shadow: 0 5px 10px black;
+}
+.nav-box li:first-child {
+    border: 1px solid black;
+    border-radius: 20px;
 }
 .nav-box li:first-child:hover {
 box-shadow: 0 4px 10px black;
@@ -275,10 +273,29 @@ header {
         opacity: 1;
     } 
 } 
-
+.type::after {
+    content:'';
+    position: absolute;
+    width: 2px;
+    height: 34px;
+    background: white;
+    margin-left: 2px;
+    animation: typing .8s linear infinite;
+}
+@keyframes typing {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 
 /********* sections ********/
+#projects h1 {
+    padding: 30px 20px 30px;
+}
 .side-pic {
     display: block;
     margin-bottom: 60px;
@@ -289,14 +306,9 @@ header {
     justify-content: space-between;
     margin-bottom: 150px;
 }
-
-#projects h1 {
-    padding: 30px 20px 30px;
-}
 .box {
     width: 100%;
-    overflow: hidden;
-   
+    overflow: hidden;  
 }
 .box img {
     width: 100%;
@@ -325,10 +337,6 @@ header {
     justify-content: center;
     align-items: center;
 }
-.overlay.open{
-    opacity: 1;
-    pointer-events: all;  
-}
 .overlay h1 {
     position: absolute;
     color: white;
@@ -347,11 +355,10 @@ header {
 .overImg.open {
     transform: scale(1.2);
 }
-
-
-
-
-
+.overlay.open{
+    opacity: 1;
+    pointer-events: all;  
+}
 
 
 /************ login *************/
@@ -390,6 +397,9 @@ header {
     padding: 5px;
 
 }
+
+
+/* dark mode button */
 .btn {
     width: 40px;
     height: 70px;
@@ -420,26 +430,7 @@ header {
     background-color: black;
     color: white;
 }
-
-.type::after {
-    content:'';
-    position: absolute;
-    width: 2px;
-    height: 34px;
-    background: white;
-    margin-left: 2px;
-    animation: typing .8s linear infinite;
-}
-@keyframes typing {
-    0%{
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/********* rightside button ************/
+/********* button on right side ************/
 .toTop {
     position: fixed;
     bottom: 10px;
