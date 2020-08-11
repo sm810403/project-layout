@@ -2,10 +2,9 @@
 window.addEventListener('load', ()=>{
     const loader = document.querySelector('.loader');
     setTimeout(()=>{
-        loader.classList.add('loader-finish')}, 3500);
+        loader.classList.add('loader-finish')}, 3700);
     clearTimeout();
 });
-
 
 // dark mode button
 let button = document.querySelector('.btn');
@@ -22,9 +21,6 @@ button.addEventListener('click', ()=> {
         document.body.classList.toggle('all');   
 })
 
-
-
-
 //nav dropdown
 let navBox = document.querySelector('.nav-box');
 let toggle = document.querySelector('.toggle');
@@ -33,9 +29,7 @@ toggle.addEventListener('click', ()=>{
         navBox.classList.toggle('nav-box2');
 })
 window.addEventListener('resize', ()=>{
-        if (navBox.classList.contains('nav-box2')) {
             navBox.classList.remove('nav-box2');
-        }
 })
 
 //gallery
@@ -55,7 +49,7 @@ boxs.forEach(box =>{
 })
 
 overlay.addEventListener('click',(e)=>{
-    if (e.target.classList.contains('open')) {
+    if (e.target.classList.contains('open')&& e.target === overlay) {
         overlay.classList.remove('open');
         overImg.classList.remove('open');
     }
