@@ -189,7 +189,7 @@ body {
 nav {
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: #ffffff;
     color: black;
     align-items: center;
     position: relative;
@@ -254,22 +254,27 @@ box-shadow: 0 4px 10px black;
 /*********** header ************/
 header {
     position: relative;
-    margin: 100px auto;
+    /* margin: 100px auto; */
     width: 400px;
-    animation-fill-mode: backwards;
-    animation: moveIn 2.2s ease-out;
+    /* right: 100px; */
+    /* animation-fill-mode: backwards; */
+    animation: moveIn 2.2s ease-out 3.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 @keyframes moveIn {
     0% {
-        transform: translateX(100%);
+        /* transform: translateX(100%); */
         opacity:0;
     }
-    80% {
+    /* 80% {
         opacity: .4;
-        transform: translateX(-3%);
-    }
+        /* transform: translateX(-3%); 
+    } */
     100% {
-        transform: translateX(0%);
+        /* transform: translateX(0%); */
         opacity: 1;
     } 
 } 
@@ -280,6 +285,8 @@ header h1 {
 header p {
     padding: 10px;
     text-align: left; 
+    /* width: 70%; */
+    /* margin: auto; */
     line-height: 1.6; 
 }
 .type::after {
@@ -631,7 +638,7 @@ header p {
     }
     header {
         text-align: center;
-        margin: 220px auto;
+        /* margin: 220px auto; */
     }
     header p {
         text-align: center;
@@ -672,8 +679,8 @@ header p {
     }
     header {
         position: relative;
-        margin: 220px 60px;
-        float: right;
+        /* margin: 220px 60px; */
+        /* float: right; */
         text-align: left;
     }
     .nav-box {
