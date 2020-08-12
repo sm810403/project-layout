@@ -1,3 +1,5 @@
+@import url('./css/loadingPage.css');
+@import url('./css/headerNav.css');
 /****** base ********/
 * {
     padding: 0;
@@ -42,313 +44,28 @@ body {
 }
 #projects {
     clear:both;
+    /* width: 90%; */
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    position:relative;
+}
+
+
+/********* projects sections ********/
+#projects h1 {
+    padding: 70px 20px 30px;
+}
+#projects h1,.grid {
     width: 90%;
     margin: auto;
-
-}
-
-/* loading img */
-.loader {
-    background-color:  #ffffff;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    pointer-events: none;
-}
-.loader-box {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-/* 4dots loading */
-.cup-box{
-    display: flex;
-    flex-direction: row;
-   
-}
-.load {
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
-}
-.loader-box .load div:nth-of-type(1),
-.loader-box .load div:nth-of-type(2),
-.loader-box .load div:nth-of-type(3),
-.loader-box .load div:nth-of-type(4) {
-    background-color: #000000;
-    margin: 0 6px;
-    border-radius: 50%;  
-    width: 20px;
-    height: 20px;
-}
-.loader-box .load div:nth-of-type(1){
-    animation: firstBounce 1s ease infinite alternate;
-}
-@keyframes firstBounce {
-    0% {
-        transform: translateY(-40px);
-    }
-    100%{
-        transform: translateY(0px);
-
-    }
-}
-.loader-box .load div:nth-of-type(2){
-    animation: secondBounce 1s ease .5s infinite alternate;
-}
-@keyframes secondBounce {
-    0% {
-        transform: translateY(-40px);
-    }
-    100%{
-        transform: translateY(0px);
-
-    }
-}
-.loader-box .load div:nth-of-type(3){
-    animation: thirdBounce 1s ease 1s infinite alternate;
-}
-@keyframes thirdBounce {
-    0% {
-        transform: translateY(-40px);
-    }
-    100%{
-        transform: translateY(0px);
-
-    }
-}
-.loader-box .load div:nth-of-type(4){
-    animation: fourthBounce 1s ease 1.5s infinite alternate;
-}
-@keyframes fourthBounce {
-    0% {
-        transform: translateY(-40px);
-    }
-    100%{
-        transform: translateY(0px);
-
-    }
-}
-
-.loader-box .load div:nth-of-type(5) {
-    font-size: 28px;
-    padding: 0 5px;
-    color: #000000;
-    display: inline;
-}
-
-/* coffee cup loading */
-.loader-box .cup-box div:nth-of-type(1) {
-    width: 150px;
-    height: 150px;
-    border: 10px solid black;
-    border-bottom-left-radius: 40%;
-    border-bottom-right-radius: 40%;
-    background: url('./images/coffee.png');
-    background-repeat: repeat-x;
-    background-position: 0 140px;
-    animation: fill 4s ease-in-out infinite alternate;
-}
-@keyframes fill {
-    0% {
-        background-position: 0px 140px;
-    }
-    40%{
-        background-position: -400px 60px;
-    }
-    80%{
-        background-position: -800px 10px;
-    }
-    100% {
-        background-position: -1000px -40px;      
-    }
-}
-.loader-box .cup-box div:nth-of-type(2) {
-    width: 50px;
-    height: 50px;
-    border: 8px solid black;
-    margin-top: 20px;
-    border-left: 0;
-    border-bottom-right-radius: 40%;
-    border-top-right-radius: 40%;
-}
-
-.loader-finish {
-    opacity: 0;
-    pointer-events: none;
-}
-
-
-/********* nav ************/
-nav {
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    color: black;
-    align-items: center;
-    position: relative;
-    z-index:1;
-}
-.toggle {
-    background: black;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    top: 16px;
-    right: 30px;
-    border-radius: 8px;
-    cursor: pointer;   
-}
-.toggle:hover {
-    box-shadow: 0 4px 10px black;
-}
-.lines {
-    width: 25px;
-    height: 5px;
-    margin: 5px auto;
-    background: white;
-    border-radius: 5px;
-}
-
-.logo {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 30px;
-    margin-left: 10%;
-    padding: 5px;
-}
-.nav-box li {
-    margin: 5px 12px;
-    padding: 5px 10px;
-}
-.nav-box li a {
-    color: black;
-    padding: 5px 10px;
-}
-.nav-box li {  
-    transition: transform .5s ease-in-out;
-}
-.nav-box li:hover {
-    transform: translateY(-3px);
-    text-shadow: 0 5px 10px black;
-}
-.nav-box li:first-child {
-    border: 1px solid black;
-    border-radius: 20px;
-}
-.nav-box li:first-child:hover {
-box-shadow: 0 4px 10px black;
-}
-.nav-box li:first-child:active {
-    transform: translateY(-1px);
-    background-color: grey;
-}
-
-
-/*********** header ************/
-header {
-    position: relative;
-    /* margin: 100px auto; */
-    width: 400px;
-    /* right: 100px; */
-    /* animation-fill-mode: backwards; */
-    animation: moveIn 2.2s ease-out 3.5s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-@keyframes moveIn {
-    0% {
-        /* transform: translateX(100%); */
-        opacity:0;
-    }
-    /* 80% {
-        opacity: .4;
-        /* transform: translateX(-3%); 
-    } */
-    100% {
-        /* transform: translateX(0%); */
-        opacity: 1;
-    } 
-} 
-header h1 {
-    font-weight: 800;
-    padding: 10px;
-}
-header p {
-    padding: 10px;
-    text-align: left; 
-    /* width: 70%; */
-    /* margin: auto; */
-    line-height: 1.6; 
-}
-.type::after {
-    content:'';
-    position: absolute;
-    width: 2px;
-    height: 34px;
-    background: white;
-    margin-left: 2px;
-    animation: typing .8s linear infinite;
-}
-@keyframes typing {
-    0%{
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/********* about me sections ********/
-#projects h1 {
-    padding: 30px 20px 30px;
 }
 /* .side-pic {
     display: block;
     margin-bottom: 60px;
 } */
-.moonEffect{
-    overflow:hidden;
-    position: relative;
-    width: 300px;
-    height: 400px;
-    margin: 60px 0;
-}
-.moonEffect h2{
-    z-index: 1;
-    color: white;
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    font-size: 36px;
-}
-.moon{
-    position: absolute;
-    z-index: 1;
-    width: 100px;
-    height: 100px;
-    /* bottom: 30px; */
-    top:50px;
-    left: -90px;
-}
-.bg, .ground {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.ground{
-    z-index:2;
-    /* bottom:110px; */
-}
+
 
 .grid {
     display: flex;
@@ -370,9 +87,6 @@ header p {
 .box img:hover {
     transform: scale(1.2);
 }
-
-
-/*********** overlay ***********/
 .overlay {
     position: fixed;
     top: 0;
@@ -413,23 +127,23 @@ header p {
 /* skills section */
 #skills {
     width: 90%;
-    margin: auto;
+    margin: 40px auto;
 }
 .grids {
-    height: 100vh;
-    margin-bottom: 150px;
+    /* height: 100vh; */
+    margin:auto;
+    /* margin-bottom: 150px; */
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(autofill, 150px);
-    grid-template-rows: repeat(autofill, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
     grid-template-areas: 
-        "a a b c c c"
-        "e f b h h d"
-        "e f i i i d"
-        "g g g j j d";
-    grid-gap: 3px;
+        "a b c d"
+        "j k k e"
+        "i h g f";
+    grid-gap: 2px;
     /* box-shadow: 0 10px 20px black; */
-    background-color: black;
+    /* background-color: black; */
     /* border-radius: 10px; */
     /* border:3px solid black; */
 }
@@ -476,6 +190,10 @@ header p {
 .gridbox10 {
     background: wheat;
     grid-area: j;
+}
+.gridbox11 {
+    background: wheat;
+    grid-area: k;
 }
 .overlays {
     position: absolute;
@@ -668,6 +386,9 @@ header p {
     #project {
         padding: 20px
     } 
+    #skills{
+        clear:both;
+    }
 }
 
 
